@@ -42,6 +42,11 @@ Resursele hardware  și  software utilizate pentru crearea aplicației sunt:
 ## Identificarea actorilor și a componentelor principale 
 ## Diagrama UML de use-case 
 ## Diagrama UML de information flow 
+
+![Diagrama UML de information flow](assets/images/InformationFlowDiagram.jpg)
+
+Diagrama Information Flow evidențiază fluxul informației de la utilizator către serviciile implementate de  TuxyDrive-API. Utilizatorul înaintează o cerere de autentificare. În cazul în care contul introdus nu există, utilizatorul își poate crea unul, iar datele introduse sunt salvate în baza de date ce gestionează conturile de utilizator. După autentificare, utilizatorul are posibilitatea de a adăuga un fișier nou sau de a efectua anumite operații asupra fișierelor existente, în urma cărora se va face un update folder-ului cu fisiere.
+
 ## Diagrama UML de componente
 
 ![Diagrama UML de componente](assets/images/ComponentsDiagram.jpg)
@@ -55,6 +60,6 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 
 ![Diagrama UML de stare](assets/images/StateDiagram.jpg)
 
-Diagrama de stare surprinde stările prin care trece aplicația TuxyDrive atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
+Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
 
 ## Diagrama ER pentru baza de date
