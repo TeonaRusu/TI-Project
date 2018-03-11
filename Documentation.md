@@ -1,4 +1,4 @@
-## Titlul proiectului
+# TuxyDrive
 ## Membrii echipei
 ## Prezentarea temei alese
 ## Analiza tipurilor de aplicaţii existente
