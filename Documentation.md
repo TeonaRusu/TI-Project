@@ -28,7 +28,13 @@ Pentru că interfața aplicației este decuplată de serviciile web avem posibil
 ## Identificarea actorilor și a componentelor principale 
 ## Diagrama UML de use-case 
 ## Diagrama UML de information flow 
-## Diagrama UML de componente 
+## Diagrama UML de componente
+
+![Diagrama UML de componente](assets/images/ComponentsDiagram.jpg)
+
+Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru a interacționa cu un server web (Servlet) și un server de baze de date. De asemenea, vom folosi un server FTP pentru gestionarea fișierelor și un server de email pentru trimiterea de mesaje către utilizator.
+*Opțional*: Aplicația va fi accesibilă și pentru mobile. 
+
 ## Diagrama UML de activitate 
 ## Diagrama UML de secvență 
 ## Diagrama UML de stare 
