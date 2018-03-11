@@ -2,6 +2,10 @@
 ## Membrii echipei
 ## Prezentarea temei alese
 ## Analiza tipurilor de aplicaţii existente
+
+La ora actuală există multe servicii de stocare în cloud pe piață, cum ar fi: GoogleDrive, OneDrive, Dropbox, ICloud Drive. 
+Spre deosebire de aplicațiile existente, proiectul nostru dorește să intre în comunitatea open-source cu scopul de a permite utilizatorilor să contribuie cu ideile proprii la dezvoltarea aplicației, în funcție de necesități. 
+
 ## Descrierea generală a implementării 
 
 Aplicația **TuxyDrive** va oferi utilizatorilor posibilitatea de a stoca și gestiona o serie de fișiere într-o manieră cât mai facilă.
