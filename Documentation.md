@@ -52,4 +52,9 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 ## Diagrama UML de activitate 
 ## Diagrama UML de secvență 
 ## Diagrama UML de stare 
+
+![Diagrama UML de stare](assets/images/StateDiagram.jpg)
+
+Diagrama de stare surprinde stările prin care trece aplicația TuxyDrive atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
+
 ## Diagrama ER pentru baza de date
