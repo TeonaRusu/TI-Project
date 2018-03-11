@@ -2,6 +2,10 @@
 ## Membrii echipei
 ## Prezentarea temei alese
 ## Analiza tipurilor de aplicaţii existente
+
+La ora actuală există multe servicii de stocare în cloud pe piață, cum ar fi: GoogleDrive, OneDrive, Dropbox, ICloud Drive. 
+Spre deosebire de aplicațiile existente, proiectul nostru dorește să intre în comunitatea open-source cu scopul de a permite utilizatorilor să contribuie cu ideile proprii la dezvoltarea aplicației, în funcție de necesități. 
+
 ## Descrierea generală a implementării 
 
 Aplicația **TuxyDrive** va oferi utilizatorilor posibilitatea de a stoca și gestiona o serie de fișiere într-o manieră cât mai facilă.
@@ -25,9 +29,24 @@ TuxyDrive va conține două mari componente:
 Pentru că interfața aplicației este decuplată de serviciile web avem posibilitatea de a dezvolta mult mai ușor aplicații desktop sau mobile care să ofere aceleași funcționalități consumând informațiile expuse de serviciile web.
 
 ## Resursele hardware/software utilizate 
+
+Resursele hardware  și  software utilizate pentru crearea aplicației sunt:
+ - Laptop/Desktop
+ - Eclipse Oxygen -- pentru dezvoltarea scripturilor 
+ - Server care folosește servicii web de tip REST
+ - Server web(Servlet)
+ - Server de baze de date (MySQL)
+ - GitHub -- pentru managmentul proiectului
+ - StackEdit -- pentru editarea documentației 
+
 ## Identificarea actorilor și a componentelor principale 
 ## Diagrama UML de use-case 
 ## Diagrama UML de information flow 
+
+![Diagrama UML de information flow](assets/images/InformationFlowDiagram.jpg)
+
+Diagrama Information Flow evidențiază fluxul informației de la utilizator către serviciile implementate de  TuxyDrive-API. Utilizatorul înaintează o cerere de autentificare. În cazul în care contul introdus nu există, utilizatorul își poate crea unul, iar datele introduse sunt salvate în baza de date ce gestionează conturile de utilizator. După autentificare, utilizatorul are posibilitatea de a adăuga un fișier nou sau de a efectua anumite operații asupra fișierelor existente, în urma cărora se va face un update folder-ului cu fisiere.
+
 ## Diagrama UML de componente
 
 ![Diagrama UML de componente](assets/images/ComponentsDiagram.jpg)
@@ -38,4 +57,9 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 ## Diagrama UML de activitate 
 ## Diagrama UML de secvență 
 ## Diagrama UML de stare 
+
+![Diagrama UML de stare](assets/images/StateDiagram.jpg)
+
+Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
+
 ## Diagrama ER pentru baza de date
