@@ -29,6 +29,16 @@ TuxyDrive va conține două mari componente:
 Pentru că interfața aplicației este decuplată de serviciile web avem posibilitatea de a dezvolta mult mai ușor aplicații desktop sau mobile care să ofere aceleași funcționalități consumând informațiile expuse de serviciile web.
 
 ## Resursele hardware/software utilizate 
+
+Resursele hardware  și  software utilizate pentru crearea aplicației sunt:
+ - Laptop/Desktop
+ - Eclipse Oxygen -- pentru dezvoltarea scripturilor 
+ - Server care folosește servicii web de tip REST
+ - Server web(Servlet)
+ - Server de baze de date (MySQL)
+ - GitHub -- pentru managmentul proiectului
+ - StackEdit -- pentru editarea documentației 
+
 ## Identificarea actorilor și a componentelor principale 
 ## Diagrama UML de use-case 
 ## Diagrama UML de information flow 
