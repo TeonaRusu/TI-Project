@@ -1,5 +1,8 @@
 # TuxyDrive
 ## Membrii echipei
+   Teona-Stefana Rusu: Team Leader
+    Ioana-Roxana Pomirleanu 
+    Mariana Tucaliuc
 ## Prezentarea temei alese
 ## Analiza tipurilor de aplicaţii existente
 
