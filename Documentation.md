@@ -40,6 +40,11 @@ Resursele hardware  și  software utilizate pentru crearea aplicației sunt:
  - StackEdit -- pentru editarea documentației 
 
 ## Identificarea actorilor și a componentelor principale 
+
+Aplicația **TuxyDrive** are ca și componente principale un *server de servicii web*, un *server web* și un *server de baze de date*. Pe lângă acestea, un *server FTP* este utilizat pentru gestionarea fișierelor și un *server de email* este utilizat pentru trimiterea de mesaje către utilizator. O componentă separată va fi *aplicația mobile*.
+
+Singurii actori care vor interacționa cu aplicația vor fi *utilizatorii*.
+
 ## Diagrama UML de use-case 
 ## Diagrama UML de information flow 
 
@@ -56,6 +61,11 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 
 ## Diagrama UML de activitate 
 ## Diagrama UML de secvență 
+
+![Diagrama UML de secvență](assets/images/SequenceDiagram.jpg)
+
+Diagrama de secvență evidențiază modul în care utilizatorul interacționează cu componentele aplicației **TuxyDrive** în funcție de acțiunile pe care le desfășoară: autentificare, vizualizarea fișierelor existente, adăugarea unui fișier, editarea sau ștergerea unui fișier existent.
+
 ## Diagrama UML de stare 
 
 ![Diagrama UML de stare](assets/images/StateDiagram.jpg)
