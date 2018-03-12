@@ -61,6 +61,11 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 
 ## Diagrama UML de activitate 
 ## Diagrama UML de secvență 
+
+![Diagrama UML de secvență](assets/images/SequenceDiagram.jpg)
+
+Diagrama de secvență evidențiază modul în care utilizatorul interacționează cu componentele aplicației **TuxyDrive** în funcție de acțiunile pe care le desfășoară: autentificare, vizualizarea fișierelor existente, adăugarea unui fișier, editarea sau ștergerea unui fișier existent.
+
 ## Diagrama UML de stare 
 
 ![Diagrama UML de stare](assets/images/StateDiagram.jpg)
