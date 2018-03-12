@@ -3,7 +3,11 @@
    Teona-Stefana Rusu: Team Leader
     Ioana-Roxana Pomirleanu 
     Mariana Tucaliuc
-## Prezentarea temei alese
+## Prezentarea temei alese și motivația alegerii temei
+
+TuxyDrive este o locație sigură unde utilizatorul poate stoca și accesa diferite fișiere de pe orice dispozitiv electronic (smartphone, tableta sau calculator). 
+Am ales sa realizăm aceasta aplicație din necesitatea unui spațiu mai mare de stocare. De asemenea, stocarea într-o aplicație externă este eficientă pentru a realiza un back-up al datelor personale.
+
 ## Analiza tipurilor de aplicaţii existente
 
 La ora actuală există multe servicii de stocare în cloud pe piață, cum ar fi: GoogleDrive, OneDrive, Dropbox, ICloud Drive. 
