@@ -53,6 +53,13 @@ Aplicația **TuxyDrive** are ca și componente principale un *server de servicii
 Singurii actori care vor interacționa cu aplicația vor fi *utilizatorii*.
 
 ## Diagrama UML de use-case 
+
+![Diagrama UML de use case](assets/images/UsecaseDiagram.jpg)
+
+Diagrama use-case oferă o descriere generală a modului în care va fi utilizat sistemul, 
+furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite de sistem
+și arată cum interacționează sistemul cu utilizatorul.
+
 ## Diagrama UML de information flow 
 
 ![Diagrama UML de information flow](assets/images/InformationFlowDiagram.jpg)
