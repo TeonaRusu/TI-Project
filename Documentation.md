@@ -93,3 +93,9 @@ Diagrama de secvență evidențiază modul în care utilizatorul interacționeaz
 Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
 
 ## Diagrama ER pentru baza de date
+
+
+![Diagrama Entity Relations](assets/images/ER.jpg)
+
+
+Diagrama relației entitate (ERD) prezintă relațiile seturilor de entități stocate în bazele de date. O entitate în acest context este o componentă a datelor. Ne propunem ca în aplicația TuxyDrive să alcătuim trei entități (pentru datele de logare , pentru informații de contact și pentru fișierele corespunzătoare fiecărui utilizator).
