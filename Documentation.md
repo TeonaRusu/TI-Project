@@ -1,6 +1,13 @@
 # TuxyDrive
 ## Membrii echipei
-## Prezentarea temei alese
+   Teona-Stefana Rusu: Team Leader
+    Ioana-Roxana Pomirleanu 
+    Mariana Tucaliuc
+## Prezentarea temei alese și motivația alegerii temei
+
+TuxyDrive este o locație sigură unde utilizatorul poate stoca și accesa diferite fișiere de pe orice dispozitiv electronic (smartphone, tableta sau calculator). 
+Am ales sa realizăm aceasta aplicație din necesitatea unui spațiu mai mare de stocare. De asemenea, stocarea într-o aplicație externă este eficientă pentru a realiza un back-up al datelor personale.
+
 ## Analiza tipurilor de aplicaţii existente
 
 La ora actuală există multe servicii de stocare în cloud pe piață, cum ar fi: GoogleDrive, OneDrive, Dropbox, ICloud Drive. 
@@ -46,6 +53,13 @@ Aplicația **TuxyDrive** are ca și componente principale un *server de servicii
 Singurii actori care vor interacționa cu aplicația vor fi *utilizatorii*.
 
 ## Diagrama UML de use-case 
+
+![Diagrama UML de use case](assets/images/UsecaseDiagram.jpg)
+
+Diagrama use-case oferă o descriere generală a modului în care va fi utilizat sistemul, 
+furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite de sistem
+și arată cum interacționează sistemul cu utilizatorul.
+
 ## Diagrama UML de information flow 
 
 ![Diagrama UML de information flow](assets/images/InformationFlowDiagram.jpg)
@@ -60,6 +74,12 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 *Opțional*: Aplicația va fi accesibilă și pentru mobile. 
 
 ## Diagrama UML de activitate 
+
+
+![Diagrama UML de activitate](assets/images/ActivityDiagram.jpg)
+
+Diagrama de activitate redă execuția unor acțiuni desfășurate fie pe parcursul utilizării, fie la apariția unor evenimente. Prin diagrama de activitate am modelat un scenariu la modul cum utilizator poate folosi aplicația.
+
 ## Diagrama UML de secvență 
 
 ![Diagrama UML de secvență](assets/images/SequenceDiagram.jpg)
