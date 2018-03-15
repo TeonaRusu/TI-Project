@@ -10,8 +10,10 @@ Am ales sa realizăm aceasta aplicație din necesitatea unui spațiu mai mare de
 
 ## Analiza tipurilor de aplicaţii existente
 
-La ora actuală există multe servicii de stocare în cloud pe piață, cum ar fi: GoogleDrive, OneDrive, Dropbox, ICloud Drive. 
-Spre deosebire de aplicațiile existente, proiectul nostru dorește să intre în comunitatea open-source cu scopul de a permite utilizatorilor să contribuie cu ideile proprii la dezvoltarea aplicației, în funcție de necesități. 
+La ora actuală, numărul provider-ilor de cloud storage este într-o creştere continuă, iar serviciile specializate în stocarea în cloud includ aplicaţii software precum GoogleDrive, OneDrive, Dropbox, Google Docs, ICloud Drive etc. Indiferent că este vorba despre documente, clipuri video sau fotografii, principiul rămâne acelaşi: serviciile online permit utilizatorilor să uploadeze informaţii pe servere, unde vor putea fi accesate din orice locaţie prin conexiunea la Internet.
+
+
+Spre deosebire de aplicațiile existente, proiectul nostru dorește să intre în comunitatea open-source cu scopul de a permite utilizatorilor să contribuie cu ideile proprii la dezvoltarea aplicației, în funcție de necesități.
 
 ## Descrierea generală a implementării 
 
@@ -37,14 +39,19 @@ Pentru că interfața aplicației este decuplată de serviciile web, avem posibi
 
 ## Resursele hardware/software utilizate 
 
-Resursele hardware  și  software utilizate pentru crearea aplicației sunt:
- - Laptop/Desktop
- - Eclipse Oxygen -- pentru dezvoltarea scripturilor 
- - Server care folosește servicii web de tip REST
- - Server web(Servlet)
- - Server de baze de date (MySQL)
- - GitHub -- pentru managmentul proiectului
- - StackEdit -- pentru editarea documentației 
+Resursele hardware și software utilizate pentru dezvoltarea aplicației sunt:
+- Laptop/Desktop;
+- Sistem de operare: Windows;
+- Browser: Mozilla Firefox, Google Chrome;
+- Eclipse Oxygen;
+- Sublime Text;
+- Server care folosește servicii web de tip REST;
+- Server web(Servlet);
+- Server pentru baza de date (MySQL);
+- Spring -- Java Framework;
+- StackEdit -- folosit pentru editarea documentației;
+- draw.io -- software folosit pentru crearea diagramelor UML și ER;
+- Git -- sistem de versionare folosit pentru managmentul proiectului; 
 
 ## Identificarea actorilor și a componentelor principale 
 
@@ -64,7 +71,7 @@ furnizează o privire de ansamblu a funcționalităților ce se doresc a fi ofer
 
 ![Diagrama UML de information flow](assets/images/InformationFlowDiagram.jpg)
 
-Diagrama Information Flow evidențiază fluxul informației de la utilizator către serviciile implementate de  TuxyDrive-API. Utilizatorul înaintează o cerere de autentificare. În cazul în care contul introdus nu există, utilizatorul își poate crea unul, iar datele introduse sunt salvate în baza de date ce gestionează conturile de utilizator. După autentificare, utilizatorul are posibilitatea de a adăuga un fișier nou sau de a efectua anumite operații asupra fișierelor existente, în urma cărora se va face un update folder-ului cu fisiere.
+Diagrama Information Flow evidențiază fluxul informației de la utilizator către serviciile implementate de TuxyDrive-API. Utilizatorul înaintează o cerere de autentificare. În cazul în care utilizatorul nu are creat un cont , acesta își poate crea unul, iar datele introduse vor fi salvate în baza de date. După autentificare, utilizatorul are posibilitatea de a adăuga un fișier nou sau de a efectua anumite operații asupra fișierelor existente, în urma cărora se va actualiza baza de date.
 
 ## Diagrama UML de componente
 
@@ -91,7 +98,7 @@ Diagrama de secvență evidențiază modul în care utilizatorul interacționeaz
 
 ![Diagrama UML de stare](assets/images/StateDiagram.jpg)
 
-Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
+Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea sau ștergerea unui fișier existent. 
 
 ## Diagrama ER pentru baza de date
 
