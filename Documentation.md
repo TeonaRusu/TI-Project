@@ -1,12 +1,15 @@
 # TuxyDrive
 ## Membrii echipei
-   Teona-Stefana Rusu: Team Leader
-    Ioana-Roxana Pomirleanu 
-    Mariana Tucaliuc
+ 
+Teona-Ștefana Rusu: Team Leader 
+
+Ioana-Roxana Pomîrleanu
+
+Mariana Tucaliuc
+
 ## Prezentarea temei alese și motivația alegerii temei
 
-TuxyDrive este o locație sigură unde utilizatorul poate stoca și accesa diferite fișiere de pe orice dispozitiv electronic (smartphone, tableta sau calculator). 
-Am ales sa realizăm aceasta aplicație din necesitatea unui spațiu mai mare de stocare. De asemenea, stocarea într-o aplicație externă este eficientă pentru a realiza un back-up al datelor personale.
+TuxyDrive este o locație sigură unde există posibilitatea de a stoca fișiere online, astfel încât acestea să fie accesibile de pe mai multe dispozitive din orice locație. Am ales să implementăm această aplicație din necesitatea unui spațiu mai mare de stocare. În loc să ne stocăm datele pe PC, tabletă, telefon sau laptop, acestea vor fi stocate în TuxyDrive pentru a le păstra fără a achiziționa elemente hardware scumpe. Totodată stocarea fișierelor în TuxyDrive este o măsură de sigurantă împotriva pierderii acestora.
 
 ## Analiza tipurilor de aplicaţii existente
 
@@ -63,9 +66,7 @@ Singurii actori care vor interacționa cu aplicația vor fi *utilizatorii*.
 
 ![Diagrama UML de use case](assets/images/UsecaseDiagram.jpg)
 
-Diagrama use-case oferă o descriere generală a modului în care va fi utilizat sistemul, 
-furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite de sistem
-și arată cum interacționează sistemul cu utilizatorul.
+Diagrama use-case oferă o descriere generală a modului în care va fi utilizat TuxyDrive, furnizează o privire de ansamblu a funcționalităților ce se doresc a fi oferite și arată cum interacționează aplicația cu utilizatorul.
 
 ## Diagrama UML de information flow 
 
@@ -86,7 +87,8 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 
 ![Diagrama UML de activitate](assets/images/ActivityDiagram.jpg)
 
-Diagrama de activitate redă execuția unor acțiuni desfășurate fie pe parcursul utilizării, fie la apariția unor evenimente. Prin diagrama de activitate am modelat un scenariu la modul cum utilizator poate folosi aplicația.
+Diagrama de activitate descrie execuția unor acțiuni desfăsurate fie pe parcursul utilizării, fie la apariția unor evenimente. Prin diagrama de activitate este evidențiat un scenariu al utilizării aplicației și al modului în care TuxyDrive reacționează la comenzile utilizatorului.
+
 
 ## Diagrama UML de secvență 
 
