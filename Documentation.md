@@ -87,7 +87,7 @@ Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru 
 
 ![Diagrama UML de activitate](assets/images/ActivityDiagram.jpg)
 
-Diagrama de activitate descrie execuția unor acțiuni desfăsurate fie pe parcursul utilizării, fie la apariția unor evenimente. Prin diagrama de activitate este evidențiat un scenariu al utilizării aplicației și al modului în care TuxyDrive reacționează la comenzile utilizatorului.
+Diagrama de activitate descrie execuția unor acțiuni desfășurate fie pe parcursul utilizării, fie la apariția unor evenimente. Prin diagrama de activitate este evidențiat un scenariu al utilizării aplicației și al modului în care TuxyDrive reacționează la comenzile utilizatorului.
 
 
 ## Diagrama UML de secvență 
