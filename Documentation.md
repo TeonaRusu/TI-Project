@@ -93,3 +93,9 @@ Diagrama de secvență evidențiază modul în care utilizatorul interacționeaz
 Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** atunci când este accesată de utilizator pentru crearea unui cont, autentificare, adăugarea unui fișier nou, editarea, vizualizarea și ștergerea unui fișier existent. 
 
 ## Diagrama ER pentru baza de date
+
+![Diagrama UML de stare](assets/images/ER.jpg)
+
+O diagramă a relației entitate (ERD) prezintă relațiile dintre entitățile stocate într-o bază de date. O entitate în acest context este o componentă a datelor. Cu alte cuvinte, diagramele ER ilustrează structura logică a bazelor de date.  
+În aplicația TuxyDrive este implementată o bază de date cu trei tabele, două pentru utilizator și una pentru fișiere. Din tabelele destinate clienților un tabel conține datele preluate din formularul de autentificare și unul conține numele de utilizator și parola. În tabelul cu fișiere sunt adăugate/șterse/modificate fișierele corespunzătoare fiecărui utilizator.  
+Un utilizator poate deține unul sau mai multe fișiere din tabelul cu fișiere (relație one to many) precum și un singur nume de utilizator (relație one to one).  
