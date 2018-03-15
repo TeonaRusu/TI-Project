@@ -29,11 +29,11 @@ TuxyDrive va conține două mari componente:
     - `/v1/drives/{drive_id}`
         - resursa *drive* gestionează informații despre fișierele stocate în cadrul aplicației și despre modul în care sunt organizate -- o resursă drive va conține o serie de referințe către resurse de tip *tree* sau *blob* deținute de către un utilizator sau un grup de utilizatori.
     - `/v1/tree/{tree_id}`
-        - resursa *drive* va gestiona modul în care resursele de tip *blob* sunt organizate, oferind posibilitatea clientului de a stoca fișiere într-o structură arborescentă.
+        - resursa *tree* va gestiona modul în care resursele de tip *blob* sunt organizate, oferind posibilitatea clientului de a stoca fișiere într-o structură arborescentă.
     - `/v1/blob/{blob_id}`
         - resursa *blob* va gestiona conținutul brut al unui fișier stocat în TuxyDrive
 
-Pentru că interfața aplicației este decuplată de serviciile web avem posibilitatea de a dezvolta mult mai ușor aplicații desktop sau mobile care să ofere aceleași funcționalități consumând informațiile expuse de serviciile web.
+Pentru că interfața aplicației este decuplată de serviciile web, avem posibilitatea de a dezvolta mult mai ușor aplicații desktop sau mobile care să ofere aceleași funcționalități, consumând informațiile expuse de serviciile web.
 
 ## Resursele hardware/software utilizate 
 
@@ -71,6 +71,7 @@ Diagrama Information Flow evidențiază fluxul informației de la utilizator că
 ![Diagrama UML de componente](assets/images/ComponentsDiagram.jpg)
 
 Aplicația **TuxyDrive** va folosi un server de servicii web de tip REST pentru a interacționa cu un server web (Servlet) și un server de baze de date. De asemenea, vom folosi un server FTP pentru gestionarea fișierelor și un server de email pentru trimiterea de mesaje către utilizator.
+
 *Opțional*: Aplicația va fi accesibilă și pentru mobile. 
 
 ## Diagrama UML de activitate 
@@ -84,7 +85,7 @@ Diagrama de activitate redă execuția unor acțiuni desfășurate fie pe parcur
 
 ![Diagrama UML de secvență](assets/images/SequenceDiagram.jpg)
 
-Diagrama de secvență evidențiază modul în care utilizatorul interacționează cu componentele aplicației **TuxyDrive** în funcție de acțiunile pe care le desfășoară: autentificare, vizualizarea fișierelor existente, adăugarea unui fișier, editarea sau ștergerea unui fișier existent.
+Diagrama de secvență evidențiază modul în care utilizatorul interacționează cu componentele aplicației **TuxyDrive** în funcție de acțiunile pe care le desfășoară: autentificare și prelucrare de fișiere.
 
 ## Diagrama UML de stare 
 
