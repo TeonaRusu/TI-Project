@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Facultate\An III\sem II\TI-P\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+575442489.index
+1413119797.index
+3936709371.index
+2101567265.index
+2914930697.index
+3305200586.index
