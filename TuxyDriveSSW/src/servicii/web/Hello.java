@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import manager.DBManager;
 
 // adnotarea Path specifica calea relativa spre un anumit serviciu web
 // e.g., @ApplicationPath("rest") + @Path("/hello") => http://localhost:8080/ProiectServiciiWeb/rest/hello
@@ -22,15 +23,16 @@ public class Hello {
 	@GET
 	@Produces(MediaType.TEXT_XML)
 	public String sayXMLHello() {
-		return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + "</hello>";
+		
+		return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + DBManager.getInstance().getUserList().toString() + "</hello>";
+		
 	}
 
 	// Metoda apelata daca tipul media cerut este HTML
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String sayHtmlHello() {
-		return "<html> " + "<title>" + "Hello Jersey" + "</title>"
-				+ "<body><h1>" + "Hello Jersey" + "</h1></body>" + "</html> ";
+		return "<html> " + "<title>" + "Hello Jersey" + "</title>" + "<body><h1>" + "Hello Jersey" + "</h1>" + DBManager.getInstance().getUserList().toString() + "</body>" + "</html> ";
 	}
 
 }
