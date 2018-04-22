@@ -3,6 +3,7 @@
 	<name>TuxyDriveSW</name>
 	<comment></comment>
 	<projects>
+		<project>TuxyDriveCore</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
