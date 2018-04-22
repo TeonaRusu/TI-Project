@@ -5,21 +5,36 @@ public class UserLogin {
 	private String username;
 	private String pswd;
 
+	public UserLogin(){}
 
 	public UserLogin(int id, String username, String pswd) {
 		this.id = id;
 		this.username = username;
 		this.pswd = pswd;
-		
 	}
-	public int getID() {
+	
+	public int getId() {
 		return id;
 	}
+	
 	public String getUsername() {
 		return username;
 	}
+	
 	public String getPswd() {
 		return pswd;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setPassword(String pswd) {
+		this.pswd = pswd;
 	}
 
 	@Override
@@ -30,5 +45,4 @@ public class UserLogin {
 			.append(pswd).append("]");
 		return builder.toString();
 	}
-
 }

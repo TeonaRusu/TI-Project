@@ -7,11 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 import data.UserLogin;
-
-
-
 
 public class DBManager {
 	private static final String URL = "jdbc:mysql://localhost:3306/tuxydrive_db";
@@ -22,9 +18,11 @@ public class DBManager {
 	private Connection conn;
 	private Statement st;
 	private ResultSet rs;
+	
 	public static DBManager getInstance() {
 		return instance;
 	}
+	
 	private DBManager() {
 		System.out.println("Loading driver...");
 		try {
@@ -37,12 +35,13 @@ public class DBManager {
 		try {
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			st = conn.createStatement();
-			System.out.println("Connection enstablished...");
+			System.out.println("Connection established...");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 	}
+	
 	public ArrayList<UserLogin> getUserList() {
 	
 			ArrayList<UserLogin> userList = new ArrayList<UserLogin>();
@@ -50,7 +49,6 @@ public class DBManager {
 				st.execute("select * from user_login");
 				System.out.println("saaaluuuut");
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -58,11 +56,10 @@ public class DBManager {
 				rs = st.getResultSet();
 				System.out.println("saaaluuuut2");
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			try {
-				
 				while (rs.next()) {
 					int id=rs.getInt("id");
 					String  username=rs.getString("username");
@@ -70,19 +67,19 @@ public class DBManager {
 					System.out.println(id+" "+username+ " "+pass);
 					UserLogin user = new UserLogin(id,username,pass);
 					
-					System.out.println(user.getID()+" "+user.getPswd()+ " "+user.getUsername());
+					System.out.println(user.getId()+" "+user.getPswd()+ " "+user.getUsername());
 					userList.add(user);
 					
 				}
 				System.out.println("saaaluuuut3");
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			// st.close();
 			return userList;
 		
 	}
+	
 	public boolean checkUserDB (String username,String password)
 	{
 		try{
@@ -98,9 +95,28 @@ public class DBManager {
 			}
 		}catch (Exception ex){
 			System.out.println(ex);
-			
 		}
 		return false;
 	}
 	
+	public UserLogin getUserLogin(String username)
+	{
+		try {
+			rs = st.executeQuery("select * from user_login where username = '" + username + "'");
+			while(rs.next())
+			{
+				UserLogin user = new UserLogin();
+				user.setId(rs.getInt("id"));
+				user.setUsername(rs.getString("username"));
+				user.setPassword(rs.getString("pswd"));
+				
+				return user;
+			}
+			return null;
+		}catch(Exception ex)
+		{
+			System.out.println(ex);
+			return null;
+		}
+	}
 }
