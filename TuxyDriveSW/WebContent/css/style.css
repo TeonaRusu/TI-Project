@@ -1,0 +1,120 @@
+body {
+    background: #fdfdfd;
+    color: #aaa;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+.logo{
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-shadow: 1px 1px #222;
+}
+.button {
+    display:inline-block;
+    padding:7px 15px;
+    vertical-align: middle;
+    text-align: center;
+    background:  #E58D2A;
+    border:1px solid transparent;
+    border-radius:3px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #42962E;
+    border: 1px solid #4CAF00;
+    cursor: pointer;
+}
+.loginBtn {
+    float: right;
+}
+
+.registerBtn {
+    float: right;
+    background: #777;
+}
+
+.registerBtn:hover {
+    background: #333;
+    border: 1px solid #222;
+}
+
+.createBtn{
+	float:right;
+	margin-right:15px;
+}
+
+.error {
+    float:left;
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+.error-message {
+    color: #a94442;
+    padding: 5px 10px;
+    border: 1px solid #a94442;
+    background: #f2dede;
+}
+
+.success {
+    float:left;
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+
+.success-message {
+    color: #3c763d;
+    padding: 5px 10px;
+    border: 1px solid #3c763d;
+    background: #dff0d8;
+}
+
+
+h1{
+	text-align:center;
+}
+
+/*footer*/
+footer {
+	margin: 30px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3em;
+}
+.header-img {
+	display:block;
+	margin:auto;
+    width: 70px;
+}
+
+.form-container {
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    width: 400px;
+    background: #fff;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.form-row {
+    margin: 0 0 15px 0;
+}
+
+.form-row label {
+    margin: 0 0 5px 0;
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+.form-row input {
+    width: 100%;
+    padding: 10px 25px;
+    border: 1px solid #ccc;
+    line-height: 180%;
+    box-sizing: border-box;
+}
