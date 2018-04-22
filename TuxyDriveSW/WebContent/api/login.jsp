@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,20 +24,20 @@
 	      <a class="navbar-brand" href="../index.jsp">TuxyDrive</a>
 	    </div>
 	    <ul class="nav navbar-nav navbar-right">
-	    	<li><a href="api/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	      <li><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 	    </ul>
 	  </div>
 	</nav>
 	<div class="form-container">
-			<form method="POST" enctype="multipart/form-data" action="LoginServlet">
+			<form method="POST" action="../LoginServlet">
 				<div class="form-row">
-					<label>Username:</label>
-					<input class="form-control" type="text" placeholder="Enter your username" name="username" required />
+					<label for="username">Username:</label>
+					<input class="form-control" id="username" type="text" placeholder="Enter your username" name="username" required />
 				</div>
 				<div class="form-row">
-					<label>Password:</label>
-					<input class="form-control" type="password" placeholder="Enter your password" name="pswd" required />
+					<label for="pswd">Password:</label>
+					<input class="form-control" id="pswd" type="password" placeholder="Enter your password" name="pswd" required />
 				</div>
 				<button class="loginBtn button" type="submit">Log In</button>
 			</form>

@@ -17,8 +17,8 @@ public class LoginService {
 	@POST
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public String postUserStatus(@Context UriInfo uriInfo, UserLogin user) {
-        
-        if (DBManager.getInstance().checkUserDB(user.getUsername(), user.getPswd())) {
+        System.out.println("LoginService -- Post");
+        if (DBManager.getInstance().checkUserDB(user)) {
             return "true";
         } else {
             return "false";
@@ -29,6 +29,7 @@ public class LoginService {
 	@Path("{username}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public UserLogin getUser(@PathParam("username") String username) {
+		System.out.println("LoginService -- Get");
 		return DBManager.getInstance().getUserLogin(username);
 	}
 }

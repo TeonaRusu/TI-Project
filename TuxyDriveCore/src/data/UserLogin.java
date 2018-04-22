@@ -5,7 +5,11 @@ public class UserLogin {
 	private String username;
 	private String pswd;
 
-	public UserLogin(){}
+	public UserLogin(){
+		this.id = 0;
+		this.username = null;
+		this.pswd = null;
+	}
 
 	public UserLogin(int id, String username, String pswd) {
 		this.id = id;
