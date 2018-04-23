@@ -26,8 +26,8 @@ body {
 }
 
 .button:hover {
-    background: #42962E;
-    border: 1px solid #4CAF00;
+    background: #CD591C;
+    border: 1px solid #B5470D;
     cursor: pointer;
 }
 .loginBtn {
@@ -93,9 +93,9 @@ footer {
 }
 
 .form-container {
-    margin: 20px auto;
+	margin: 60px auto;
     border: 1px solid #ccc;
-    width: 400px;
+	width: 400px;
     background: #fff;
     padding: 25px;
     overflow: hidden;
@@ -118,3 +118,21 @@ footer {
     line-height: 180%;
     box-sizing: border-box;
 }
+
+.register-form{
+	position: absolute;
+	margin: auto;
+	text-align: center;
+    border: 2px solid black;
+	width: 600px;
+    height: 500px;
+	top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.container{
+    padding:50px;
+}
+

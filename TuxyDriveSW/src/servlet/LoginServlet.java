@@ -80,14 +80,14 @@ public class LoginServlet extends HttpServlet {
 
 				if (status==200){
 					// JSON Parser
-					
+					/*
 					ObjectMapper mapper = new ObjectMapper();
-					SimpleModule module = new SimpleModule("UserDeserializer");
-					module.addDeserializer(UserLogin.class, new UserDeserializer());
+					SimpleModule module = new SimpleModule("UserParser");
+					module.addDeserializer(UserLogin.class, new UserParser());
 					mapper.registerModule(module);
 					UserLogin userLogin = new UserLogin();
 					userLogin = mapper.readValue(data, UserLogin.class);
-					System.out.println(userLogin.getUsername());
+					System.out.println(userLogin.getUsername());*/
 					
 					System.out.println("Correct password!");
 					response.sendRedirect("home.jsp");
@@ -105,7 +105,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		else {
-			request.setAttribute("error", "Pasword is mandatory!");
+			request.setAttribute("error", "Password is mandatory!");
 			request.getRequestDispatcher("api/login.jsp").forward(request, response);
 		}
 	}

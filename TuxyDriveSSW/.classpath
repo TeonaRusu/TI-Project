@@ -14,5 +14,14 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11-test-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11-tests.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
