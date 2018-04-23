@@ -143,3 +143,10 @@ Pe parcursul etapei II a proiectului s-au pus bazele atat pentru **TuxyDrive-UI*
  - TuxyDrive-API
      - [ ] Baza de date
         - crearea  tabelelor autentificare și fișiere utilizator.  Implementarea operațiilor de adăugare, ștergere, căutare, modificare entități din baza de date TuxyDrive.
+
+
+## Obiectivele etapei 
+
+ - TuxyDrive-UI
+     - [ ] Realizarea unei pagini html care sa permita utilizatorului crearea unui cont;
+
