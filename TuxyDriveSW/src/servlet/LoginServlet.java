@@ -27,11 +27,19 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.fasterxml.jackson.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
 import data.UserLogin;
+import data.UserParser;
+import data.UserSession;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -41,15 +49,14 @@ public class LoginServlet extends HttpServlet {
 	public LoginServlet() {
 		super();
 	}
+	
 	private static URI getBaseURI() {
 		return UriBuilder.fromUri("http://localhost:1234/TuxyDriveSSW/").build();
 	}
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -60,7 +67,6 @@ public class LoginServlet extends HttpServlet {
 			if(!pswd.equals(null) && !pswd.equals("") ) {
 				System.out.println("Date ok");
 				
-
 				ClientConfig config = new ClientConfig();
 				Client client = ClientBuilder.newClient(config);
 				client.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true);
@@ -75,6 +81,24 @@ public class LoginServlet extends HttpServlet {
 				if (status==200){
 					// JSON Parser
 					
+					ObjectMapper mapper = new ObjectMapper();
+					SimpleModule module = new SimpleModule("UserDeserializer");
+					module.addDeserializer(UserLogin.class, new UserDeserializer());
+					mapper.registerModule(module);
+					UserLogin userLogin = new UserLogin();
+					userLogin = mapper.readValue(data, UserLogin.class);
+					System.out.println(userLogin.getUsername());
+					UserSession.getInstance().setUser(userLogin);
+					
+					System.out.println("Logam user checkuim");
+					HttpSession session = request.getSession();
+					
+					session.setAttribute("id", UserSession.getInstance().getUser().getId());
+					session.setAttribute("username", UserSession.getInstance().getUser().getUsername());
+					session.setAttribute("password", UserSession.getInstance().getUser().getPswd());
+
+					session.setAttribute("error", "You are already loged in as: ");
+					
 					response.sendRedirect("home.jsp");
 				}else{
 					System.out.println("Incorrect password!");
@@ -82,21 +106,16 @@ public class LoginServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("error", "Incorrect user or password!");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
-					
 				}
 			}
 			else{
 				request.setAttribute("error", "Fields are mandatory!");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
-				
 			}
 		}
 		else {
 			request.setAttribute("error", "Pasword is mandatory!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
-			
 		}
-
 	}
-
 }
