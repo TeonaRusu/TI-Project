@@ -131,8 +131,15 @@ Pe parcursul etapei II a proiectului s-au pus bazele atat pentru **TuxyDrive-UI*
                  
      - [ ] Server de servicii web
      - [ ] Baza de date
+         -  serverul de mysql comunica cu aplicația cu ajutorul driver-ului JDBC-Java_Database_Connectivity;
+         -  este creat un tabel în baza de date în care s-a realizat o operație de căutare a numelui și a parolei introduse de utilizator.
 
-## Obiectivele etapei 
+
+## Obiectivele etapei III
 
  - TuxyDrive-UI
-     - [ ] Realizarea unei pagini html care sa permita utilizatorului crearea unui cont;
+     - [ ] Realizarea unei pagini html care sa permita utilizatorului crearea unui cont
+  
+ - TuxyDrive-API
+     - [ ] Baza de date
+        - crearea  tabelelor autentificare și fișiere utilizator.  Implementarea operațiilor de adăugare, ștergere, căutare, modificare entități din baza de date TuxyDrive.
