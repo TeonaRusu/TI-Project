@@ -12,16 +12,19 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+	<!-- Header -->
 	<div class="header">
 		<header>
 			<h1 class="logo"><img class ="header-img" src="../images/logo.png" alt="Logo">Welcome to TuxyDrive!</h1>
 		</header>
 	</div>
-	<!-- Top Bar -->
+	<!-- End header -->
+	
+	<!-- Top navBar -->
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="../index.jsp">TuxyDrive</a>
+	      <a class="navbar-brand glyphicon glyphicon-home" href="../index.jsp"></a>
 	    </div>
 	    <ul class="nav navbar-nav navbar-right">
 	    	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -29,6 +32,9 @@
 	    </ul>
 	  </div>
 	</nav>
+	<!-- End top navBar -->
+	
+	<!-- Login form -->
 	<div class="form-container">
 			<form method="POST" action="../LoginServlet">
 				<div class="form-row">
@@ -44,5 +50,6 @@
 			<div class="error">
 			</div>
 	</div>
+	<!-- End login form -->
  </body>
 </html>
