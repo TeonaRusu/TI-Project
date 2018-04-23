@@ -61,13 +61,13 @@ public class DBManager {
 			
 			try {
 				while (rs.next()) {
-					int id=rs.getInt("id");
-					String  username=rs.getString("username");
-					String  pass=rs.getString("password");
-					System.out.println(id+" "+username+ " "+pass);
+					int id = rs.getInt("id");
+					String  username = rs.getString("username");
+					String  pass = rs.getString("password");
+					System.out.println(id + " " + username + " " + pass);
 					UserLogin user = new UserLogin(id,username,pass);
 					
-					System.out.println(user.getId()+" "+user.getPswd()+ " "+user.getUsername());
+			//		System.out.println(user.getId() + " " + user.getPswd() + " " + user.getUsername());
 					userList.add(user);
 					
 				}
@@ -80,8 +80,9 @@ public class DBManager {
 		
 	}
 	
-	public boolean checkUserDB (String username,String password)
+	public boolean checkUserDB (UserLogin user)
 	{
+		System.out.println("checkUserDB Fct");
 		try{
 			String query = "select * from user_login";
 			rs = st.executeQuery(query);
@@ -89,7 +90,8 @@ public class DBManager {
 			while(rs.next()) {
 				String dbUsername = rs.getString("username");
 				String dbPassword = rs.getString("password");
-				if(username.equals(dbUsername) && password.equals(dbPassword)) {
+				if(user.getUsername().equals(dbUsername) && user.getPswd().equals(dbPassword)) {
+					System.out.println("user + pswd ok");
 					return true;
 				}
 			}
@@ -101,15 +103,20 @@ public class DBManager {
 	
 	public UserLogin getUserLogin(String username)
 	{
+		System.out.println("getUserLogin Fct");
+		System.out.println(username);
 		try {
 			rs = st.executeQuery("select * from user_login where username = '" + username + "'");
+			System.out.println("rs");
 			while(rs.next())
 			{
-				UserLogin user = new UserLogin();
-				user.setId(rs.getInt("id"));
-				user.setUsername(rs.getString("username"));
-				user.setPassword(rs.getString("pswd"));
-				
+				System.out.println("while");
+				UserLogin user = new UserLogin(rs.getInt("id"),rs.getString("username"),rs.getString("password") );
+			
+//				user.setId(rs.getInt("id"));
+//				user.setUsername(rs.getString("username"));
+//				user.setPassword(rs.getString("pswd"));
+				System.out.println("user DB " + user);
 				return user;
 			}
 			return null;

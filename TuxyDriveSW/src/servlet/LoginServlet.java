@@ -33,6 +33,7 @@ import org.xml.sax.SAXException;
 
 import data.UserLogin;
 
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	
@@ -51,16 +52,17 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost");
+		
 		String user = request.getParameter("username");
 		String pswd = request.getParameter("pswd");
 		
-		if (!user.equals(null) && !user.equals("")){
+		System.out.println("user-->" + user);
+		
+		if (!user.equals(null) && !user.equals("")) {
 			if(!pswd.equals(null) && !pswd.equals("") ) {
-				System.out.println("Date ok");
-				
-
+			
 				ClientConfig config = new ClientConfig();
 				Client client = ClientBuilder.newClient(config);
 				client.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true);
@@ -74,26 +76,26 @@ public class LoginServlet extends HttpServlet {
 
 				if (status==200){
 					// JSON Parser
-					
+					System.out.println("Correct password!");
 					response.sendRedirect("home.jsp");
 				}else{
 					System.out.println("Incorrect password!");
 					
 					HttpSession session = request.getSession();
 					session.setAttribute("error", "Incorrect user or password!");
-					request.getRequestDispatcher("login.jsp").forward(request, response);
+					request.getRequestDispatcher("api/login.jsp").forward(request, response);
 					
 				}
 			}
 			else{
 				request.setAttribute("error", "Fields are mandatory!");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("api/login.jsp").forward(request, response);
 				
 			}
 		}
 		else {
 			request.setAttribute("error", "Pasword is mandatory!");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("api/login.jsp").forward(request, response);
 			
 		}
 
