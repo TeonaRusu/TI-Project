@@ -109,3 +109,37 @@ Diagrama de stare surprinde stările prin care trece aplicația **TuxyDrive** at
 O diagramă a relației entitate (ERD) prezintă relațiile dintre entitățile stocate într-o bază de date. O entitate în acest context este o componentă a datelor. Cu alte cuvinte, diagramele ER ilustrează structura logică a bazelor de date.  
 În aplicația TuxyDrive este implementată o bază de date cu trei tabele, două pentru utilizator și una pentru fișiere. Din tabelele destinate clienților un tabel conține datele preluate din formularul de autentificare și unul conține numele de utilizator și parola. În tabelul cu fișiere sunt adăugate/șterse/modificate fișierele corespunzătoare fiecărui utilizator.  
 Un utilizator poate deține unul sau mai multe fișiere din tabelul cu fișiere (relație one to many) precum și un singur nume de utilizator (relație one to one).  
+
+## Analiza dezvoltarii aplicatiei in etapa II
+
+Pe parcursul etapei II a proiectului s-au pus bazele atat pentru **TuxyDrive-UI** cat si pentru **TuxyDrive-API**.
+
+ - TuxyDrive-UI
+ 
+     - [ ] Utilizand *HTML5*, *CSS3* și *JavaScript* s-au dezvoltat paginile:
+        - index (prima pagina a aplicatiei);
+        - login (contine un formular care permite utilizatorului sa se logheze, inaintand o cerere catre servlet);
+        - home;
+      - [ ] Pagina de logout a fost creata cu ajutorul un server web care foloseste jsp-uri, realizandu-se procesul de delogare.
+             
+
+     
+ - TuxyDrive-API
+     
+     - [ ] Server web care foloseste servlet
+          - acesta primeste cererea de autentificare inaintata de utilizator atunci cand doreste sa se logheze. Servletul, la randul sau, trimite o cerere catre serverul de servicii web. In cazul in care primeste un raspuns afirmativ (status 200), clientul este redirectionat catre pagina home a aplicatiei
+                 
+     - [ ] Server de servicii web
+     - [ ] Baza de date
+         -  serverul de mysql comunica cu aplicația cu ajutorul driver-ului JDBC-Java_Database_Connectivity;
+         -  este creat un tabel în baza de date în care s-a realizat o operație de căutare a numelui și a parolei introduse de utilizator.
+
+
+## Obiectivele etapei III
+
+ - TuxyDrive-UI
+     - [ ] Realizarea unei pagini html care sa permita utilizatorului crearea unui cont
+  
+ - TuxyDrive-API
+     - [ ] Baza de date
+        - crearea  tabelelor autentificare și fișiere utilizator.  Implementarea operațiilor de adăugare, ștergere, căutare, modificare entități din baza de date TuxyDrive.
