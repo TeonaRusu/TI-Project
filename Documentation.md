@@ -110,29 +110,53 @@ O diagramă a relației entitate (ERD) prezintă relațiile dintre entitățile 
 În aplicația TuxyDrive este implementată o bază de date cu trei tabele, două pentru utilizator și una pentru fișiere. Din tabelele destinate clienților un tabel conține datele preluate din formularul de autentificare și unul conține numele de utilizator și parola. În tabelul cu fișiere sunt adăugate/șterse/modificate fișierele corespunzătoare fiecărui utilizator.  
 Un utilizator poate deține unul sau mai multe fișiere din tabelul cu fișiere (relație one to many) precum și un singur nume de utilizator (relație one to one).  
 
-## Analiza dezvoltarii aplicatiei in etapa II
+## Analiza dezvoltării aplicației în etapa II
 
-Pe parcursul etapei II a proiectului s-au pus bazele atat pentru **TuxyDrive-UI** cat si pentru **TuxyDrive-API**.
+Pe parcursul etapei II a proiectului s-au pus bazele atât pentru **TuxyDrive-UI**, cât și pentru **TuxyDrive-API**.
 
  - TuxyDrive-UI
  
-     - [ ] Utilizand *HTML5*, *CSS3* și *JavaScript* s-au dezvoltat paginile:
-        - index (prima pagina a aplicatiei);
-        - login (contine un formular care permite utilizatorului sa se logheze, inaintand o cerere catre servlet);
+     - [ ] Utilizând *HTML5*, *CSS3* și *JavaScript* s-au dezvoltat paginile:
+        - index (prima pagină a aplicației);
+        - login (conține un formular care permite utilizatorului să se logheze, înaintând o cerere către servlet);
         - home;
-      - [ ] Pagina de logout a fost creata cu ajutorul un server web care foloseste jsp-uri, realizandu-se procesul de delogare.
+     - [ ] Pagina de _logout_ a fost creată cu ajutorul un server web care folosește jsp-uri, realizându-se procesul de delogare.
              
 
      
  - TuxyDrive-API
      
-     - [ ] Server web care foloseste servlet
-          - acesta primeste cererea de autentificare inaintata de utilizator atunci cand doreste sa se logheze. Servletul, la randul sau, trimite o cerere catre serverul de servicii web. In cazul in care primeste un raspuns afirmativ (status 200), clientul este redirectionat catre pagina home a aplicatiei
+     - Server web care folosește servlet
+          - acesta primește cererea de autentificare înaintată de utilizator atunci când dorește să se logheze;
+          - servletul, la rândul său, trimite o cerere către serverul de servicii web; 
+          - în cazul în care primește un răspuns afirmativ (status 200), clientul este redirecționat către pagina home a aplicației.
                  
-     - [ ] Server de servicii web
-     - [ ] Baza de date
+     - Server de servicii web
+          - asigură comunicarea dintre servlet și baza de date
+          - serverul de servicii web primește o cerere de la servlet, apoi înaintează o cerere de verificare a existenței utilizatorului în baza de date către DBManager și așteaptă un răspuns;
+          - în cazul în care primește un răspuns afirmativ, trimite către servlet un răspuns în format JSON care conține datele utilizatorului.
 
-## Obiectivele etapei 
+     - Baza de date
+          -  serverul de mysql comunică cu aplicația cu ajutorul driver-ului JDBC-Java_Database_Connectivity;
+          -  este creat un tabel în baza de date în care s-a realizat o operație de căutare a numelui și a parolei introduse de către utilizator;
+          - atunci când primește 
+
+## Obiectivele etapei III
 
  - TuxyDrive-UI
-     - [ ] Realizarea unei pagini html care sa permita utilizatorului crearea unui cont;
+     - Realizarea unei pagini html care să permită utilizatorului crearea unui cont;
+     - Dezvoltarea paginii _home_ astfel încât să permită utilizatorului să vizualizeze lista fișierelor
+
+ - TuxyDrive-API
+     - Server web care folosește servlet
+        - afișează fișierele utilizatorului prin intermediul JSP-ului
+        - adaugă funcționalități: adăugare, editare, vizualizare, ștergere
+
+     - Server de servicii web
+        - adăugare FTP pentru a gestiona fișierele
+
+     - Baza de date
+          - crearea  tabelelor autentificare și fișiere utilizator;
+          - implementarea operațiilor de adăugare, ștergere, căutare, modificare entități din baza de date TuxyDrive.
+
+ - _Opțional_: Aplicație Mobile
