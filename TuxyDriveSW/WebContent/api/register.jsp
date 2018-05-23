@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style2.css">
 </head>
 <body>
 	<!-- Header -->
@@ -33,33 +33,41 @@
 	<!-- End top navBar -->
 	
 	<!-- Register form -->
-	<div class="form-container register-from">	
-		<form method="POST" enctype="multipart/form-data" action="RegisterServlet">
-			<div class="form-row">
-				<label>First name</label>
-				<input class="form-control" type="text" placeholder="Enter your first name" name="fName" required />
+	<div class="form-container register-form">	
+		<form method="POST" enctype="multipart/form-data" action="../RegisterServlet">
+			<div style="width: 50%; float:left; background-color:#fefefe; height: 300px;">
+				<div class="form-row">
+					<label>First name</label>
+					<input class="form-control" type="text" placeholder="Enter your first name" name="Rfname" required />
+				</div>
+				<div class="form-row">
+					<label>Last name</label>
+					<input class="form-control" type="text" placeholder="Enter your last name" name="RlName" required />
+				</div>
+				<div class="form-row">
+					<label>Username</label>
+					<input class="form-control" type="text" placeholder="Enter your username" name="Rusername" required />
+				</div>
+				<div class="form-row">
+					<label>Age</label>
+					<input class="form-control" type="text" placeholder="Enter your age" name="Rage" required />
+				</div>
 			</div>
-			<div class="form-row">
-				<label>Last name</label>
-				<input class="form-control" type="text" placeholder="Enter your last name" name="lName" required />
+			<div style="width: 50%; float:right; background-color:#fefefe; height: 300px; padding-left: 15px">
+				<div class="form-row">
+					<label>Email</label>
+					<input class="form-control" type="email" placeholder="Enter your email" name="Remail" required />
+				</div>
+				<div class="form-row">
+					<label>Password</label>
+					<input class="form-control" type="password" placeholder="Enter your password" name="Rpswd" required />
+				</div>
+				<div class="form-row">
+					<label>Confirm Password</label>
+					<input class="form-control" type="password" placeholder="Enter your password" name="RCpswd" required />
+				</div>
 			</div>
-			<div class="form-row">
-				<label>Age</label>
-				<input class="form-control" type="text" placeholder="Enter your age" name="age" required />
-			</div>
-			<div class="form-row">
-				<label>Email</label>
-				<input class="form-control" type="email" placeholder="Enter your email" name="email" required />
-			</div>
-			<div class="form-row">
-				<label>Username</label>
-				<input class="form-control" type="text" placeholder="Enter your username" name="username" required />
-			</div>
-			<div class="form-row">
-				<label>Password</label>
-				<input class="form-control" type="password" placeholder="Enter your password" name="pswd" required />
-			</div>
-				<button class="loginBtn button" type="submit">Sign Up</button>
+					<button class="loginBtn button" type="submit">Sign Up</button>
 		</form>
 	</div>
 	<!-- End register form -->
