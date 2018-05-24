@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../css/style2.css">
+  <script src="js/script.js"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -38,33 +39,33 @@
 			<div style="width: 50%; float:left; background-color:#fefefe; height: 300px;">
 				<div class="form-row">
 					<label>First name</label>
-					<input class="form-control" type="text" placeholder="Enter your first name" name="Rfname" required />
+					<input class="form-control" type="text" placeholder="Enter your first name" id="fname" name="fname" required />
 				</div>
 				<div class="form-row">
 					<label>Last name</label>
-					<input class="form-control" type="text" placeholder="Enter your last name" name="RlName" required />
+					<input class="form-control" type="text" placeholder="Enter your last name" id= "lname" name="lname" required />
 				</div>
 				<div class="form-row">
 					<label>Username</label>
-					<input class="form-control" type="text" placeholder="Enter your username" name="Rusername" required />
+					<input class="form-control" type="text" placeholder="Enter your username" id="username" name="username" required />
 				</div>
 				<div class="form-row">
 					<label>Age</label>
-					<input class="form-control" type="text" placeholder="Enter your age" name="Rage" required />
+					<input class="form-control" type="text" placeholder="Enter your age" id="age" name="age" required />
 				</div>
 			</div>
 			<div style="width: 50%; float:right; background-color:#fefefe; height: 300px; padding-left: 15px">
 				<div class="form-row">
 					<label>Email</label>
-					<input class="form-control" type="email" placeholder="Enter your email" name="Remail" required />
+					<input class="form-control" type="email" placeholder="Enter your email" id="email" name="email" required />
 				</div>
 				<div class="form-row">
 					<label>Password</label>
-					<input class="form-control" type="password" placeholder="Enter your password" name="Rpswd" required />
+					<input class="form-control" type="password" placeholder="Enter your password" id="pswd1" name="pswd1" required />
 				</div>
 				<div class="form-row">
 					<label>Confirm Password</label>
-					<input class="form-control" type="password" placeholder="Enter your password" name="RCpswd" required />
+					<input class="form-control" type="password" placeholder="Confirm your password" id="pswd2" name="pswd2" required />
 				</div>
 			</div>
 					<button class="loginBtn button" type="submit">Sign Up</button>

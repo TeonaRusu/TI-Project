@@ -95,17 +95,17 @@ public class LoginServlet extends HttpServlet {
 					System.out.println("Incorrect password!");
 					
 					HttpSession session = request.getSession();
-					session.setAttribute("error", "Incorrect user or password!");
+					session.setAttribute("error-msg", "Incorrect user or password!");
 					request.getRequestDispatcher("api/login.jsp").forward(request, response);
 				}
 			}
 			else{
-				request.setAttribute("error", "Fields are mandatory!");
+				request.setAttribute("login-msg", "Fields are mandatory!");
 				request.getRequestDispatcher("api/login.jsp").forward(request, response);
 			}
 		}
 		else {
-			request.setAttribute("error", "Password is mandatory!");
+			request.setAttribute("login-msg", "Password is mandatory!");
 			request.getRequestDispatcher("api/login.jsp").forward(request, response);
 		}
 	}
