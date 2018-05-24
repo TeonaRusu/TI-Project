@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" %>
+	pageEncoding="ISO-8859-1" 
+	%>
+<% if (session.getAttribute("username") != null && (session.getAttribute("pass") == null)) 
+{	out.print("aici-eroare");
+	response.sendRedirect("home.jsp");
+}%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +32,8 @@
 	      <a class="navbar-brand glyphicon glyphicon-home" href="#"></a>
 	    </div>
 	    <ul class="nav navbar-nav navbar-right">
-	    	<li><a href="api/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      <li><a href="api/register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	    	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      <li><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 	    </ul>
 	  </div>
 	</nav>

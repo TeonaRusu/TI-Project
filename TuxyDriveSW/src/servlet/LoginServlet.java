@@ -78,47 +78,61 @@ public class LoginServlet extends HttpServlet {
 				UserLogin user2 = new UserLogin();
 				user2.setUsername(user);
 				user2.setPassword(pswd);
-								
-				resp = service.path("rest").path("login").path(user).request().accept(MediaType.APPLICATION_JSON).get(Response.class);
-				String data = resp.readEntity(String.class);
-				int status = resp.getStatus();
-				System.out.println(data);
-
-				if (status==200){
-					// JSON Parser
-					
-					try {
-						JSONObject obj = new JSONObject(data);
-						password =  obj.getString("pswd");
-						System.out.println("Parola este:" + password);
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					if (password.equals(pswd)) {
-						System.out.println("Correct password!");
-						response.sendRedirect("home.jsp");
-					}
-					else
-					{
-						System.out.println("Incorrect password!");
-						request.getRequestDispatcher("api/login.jsp").forward(request, response);
-					}
-				}else{
-						
+				
+				/*Check if user in in database */
+				resp = service.path("rest").path("login").request().post(Entity.entity(user2, MediaType.APPLICATION_JSON), Response.class);
+				String value = resp.readEntity(String.class);
+				
+				if(value.equals("false")) {
 					HttpSession session = request.getSession();
-					session.setAttribute("error-msg", "Incorrect user or password!");
-					request.getRequestDispatcher("api/login.jsp").forward(request, response);
+					session.setAttribute("error-msg", "User in not in database!");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}else {
+					
+					/*Creare sesiune cu datele utilizatorului*/
+					resp = service.path("rest").path("login").path(user).request().accept(MediaType.APPLICATION_JSON).get(Response.class);
+					String data = resp.readEntity(String.class);
+					int status = resp.getStatus();
+					System.out.println(data);
+	
+					if (status == 200){
+						// JSON Parser		
+						try {
+							JSONObject obj = new JSONObject(data);
+							password =  obj.getString("pswd");
+							System.out.println("Parola este:" + password);
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						HttpSession session = request.getSession();
+						if (password.equals(pswd)) {
+							
+							System.out.println("Correct password!");
+							session.setAttribute("success-msg", "Login Successfully!");
+							session.setAttribute("username", user2.getUsername());
+							session.setAttribute("id", user2.getId());
+							session.setAttribute("pass", user2.getPswd());
+							
+							response.sendRedirect("home.jsp");
+						}else{
+							System.out.println("Incorrect password!");
+							session.setAttribute("error-msg", "Incorrect password!");
+							response.sendRedirect("login.jsp");
+						}
+					}else{
+							
+						request.setAttribute("msg", "User isn't in database!");
+						response.sendRedirect("login.jsp");
+					}
 				}
+				}else{
+					request.setAttribute("msg", "Password is mandatory!");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}
+			}else {
+				request.setAttribute("msg", "Fields are mandatory!");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-			else{
-				request.setAttribute("login-msg", "Fields are mandatory!");
-				request.getRequestDispatcher("api/login.jsp").forward(request, response);
-			}
-		}
-		else {
-			request.setAttribute("login-msg", "Password is mandatory!");
-			request.getRequestDispatcher("api/login.jsp").forward(request, response);
-		}
 	}
 }

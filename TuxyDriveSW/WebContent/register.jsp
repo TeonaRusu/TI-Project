@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="stylesheet" href="css/style2.css">
   <script src="js/script.js"></script>
 </head>
 <body>
 	<!-- Header -->
 	<div class="header">
 		<header>
-			<h1 class="logo"><img class ="header-img" src="../images/logo.png" alt="Logo">Welcome to TuxyDrive!</h1>
+			<h1 class="logo"><img class ="header-img" src="images/logo.png" alt="Logo">Welcome to TuxyDrive!</h1>
 		</header>
 	</div>
 	<!-- End header -->
@@ -23,7 +23,7 @@
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand glyphicon glyphicon-home" href="../index.jsp"></a>
+	      <a class="navbar-brand glyphicon glyphicon-home" href="index.jsp"></a>
 	    </div>
 	    <ul class="nav navbar-nav navbar-right">
 	    	<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -35,7 +35,7 @@
 	
 	<!-- Register form -->
 	<div class="form-container register-form">	
-		<form method="POST" enctype="multipart/form-data" action="../RegisterServlet">
+		<form method="POST" enctype="multipart/form-data" action="RegisterServlet">
 			<div style="width: 50%; float:left; background-color:#fefefe; height: 300px;">
 				<div class="form-row">
 					<label>First name</label>
