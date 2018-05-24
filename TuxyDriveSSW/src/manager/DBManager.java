@@ -2,12 +2,16 @@ package manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
 import data.UserLogin;
+import data.Files;
+import data.User;
 
 public class DBManager {
 	private static final String URL = "jdbc:mysql://localhost:3306/tuxydrive_db";
@@ -78,6 +82,78 @@ public class DBManager {
 			// st.close();
 			return userList;
 		
+	}
+	public boolean isUserInDatabase(String email) {
+		try{
+			String query = "select * from users";
+			rs = st.executeQuery(query);
+			while(rs.next()) {
+				String dbEmail = rs.getString("email");
+				if(email.equals(dbEmail)) {
+					return true;
+				}
+			}
+		}catch (Exception ex){
+			System.out.println(ex);
+		}
+		return false;
+	}
+	public boolean isFileInDatabase(String name) {
+		try{
+			String query = "select * from files";
+			rs = st.executeQuery(query);
+			while(rs.next()) {
+				String dbName= rs.getString("Name");
+				if(name.equals(dbName)) {
+					return true;
+				}
+			}
+		}catch (Exception ex){
+			System.out.println(ex);
+		}
+		return false;
+	}
+	public boolean insertUser(User user) {
+		try{
+			if(isUserInDatabase(user.getEmail())) {
+				return false;
+			}
+			String sql = "INSERT INTO users(UserID, LastName, FirstName, Age, Email) VALUES(?,?,?,?,?)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getEmail());
+			pstmt.setString(2, user.getLastName());
+			pstmt.setString(3, user.getFirstName());
+			pstmt.setString(4, user.getEmail());
+			pstmt.setInt(5, (user.getAge()));
+//			pstmt.setString(6, user.getAddress2());
+			pstmt.executeUpdate();
+			return true;
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public boolean insertFile(Files file) {
+		try{
+			if(isFileInDatabase(file.getName())) {
+				return false;
+			}
+			String sql = "INSERT INTO files(FileID, UserID, Name, Type, Email) VALUES(?,?,?,?,?)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, file.getFileID());
+			pstmt.setInt(2, file.getUserID());
+			pstmt.setString(3, file.getName());
+			pstmt.setString(4, file.getType());
+			pstmt.setDouble(5, (file.getSize()));
+//			pstmt.setString(6, user.getAddress2());
+			pstmt.executeUpdate();
+			return true;
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 	public boolean checkUserDB (UserLogin user)
