@@ -34,7 +34,7 @@
 	    <div class="header-sec">
 	      <h3 style="font-size:2em;"><strong>UPLOAD YOUR FILES</strong></h3>
 	    </div>
-	    <form class="form-container">
+	    <form class="form-container" enctype="multipart/form-data" method="POST" action="UploadServlet">
 	         <div class="form-row">
 	            <label>File Name</label>
 	            <input id="fileName" class="form-control" type="text" name="column" required /> 
@@ -42,8 +42,9 @@
 	          <div class="form-row-file">
 	            <input type="file" name="file" id="file"/>
 	          </div>
-	          <button class="uploadBtn button" value="uploadBtn" onclick="">UPLOAD</button>
+	          <input class="uploadBtn button" value="UPLOAD" type="submit">
 	    </form>
-	</div> 
+	</div>
+	 <h4>${message}</h4> 
 </body>
 </html>

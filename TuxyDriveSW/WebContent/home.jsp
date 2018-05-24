@@ -50,11 +50,12 @@
   
   	<!-- Main container -->
 	<div class="container">
-		<h2 id="welcome">Welcome!</h2>
-		<h2>My TuxyDrive</h2>
-		<p>
-			HOME!
-		</p>
+		<h2 style="font-size:2em; color:red"id="welcome">Welcome!</h2>
+		<form method="POST" action="../index.php">
+			<button class="viewBtn button">View Files!</button>
+		</form>
+		</div id="table-place">
+		</div>
 	</div>
 	<!-- End main container -->
 </body>
