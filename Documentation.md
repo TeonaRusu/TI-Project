@@ -207,7 +207,7 @@ Pe parcursul etapei II a proiectului s-au pus bazele atât pentru **TuxyDrive-UI
   
   b) Roxana: 
   
-  c) Mariana: 
+  c) Mariana: Teona și-a asumat în totalitate rolul de lider. A împărțit task-urile în mod egal, în funcție de cunoștiințele noastre și a sărit în ajutor de fiecare dată când a apărut vreo problemă.
 
 5. Concluzii:
   - aplicația permite utilizatorului să stocheze fișiere în cloud

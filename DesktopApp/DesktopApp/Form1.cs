@@ -38,13 +38,15 @@ namespace DesktopApp
             Console.WriteLine(responseFromServer);
             string[] words = responseFromServer.Split('#');
             int j = 0;
+            dataGridView1.Rows.Add();
             dataGridView1.Rows[0].Cells[0].Value = words[1];
             dataGridView1.Rows[0].Cells[1].Value = words[2];
             dataGridView1.Rows[0].Cells[2].Value = words[3];
+           
       
-            //dataGridView1.Rows[1].Cells[0].Value = words[4];
-           // dataGridView1.Rows[2].Cells[1].Value = words[6];
-          //  dataGridView1.Rows[3].Cells[2].Value = words[7];
+            dataGridView1.Rows[1].Cells[0].Value = words[5];
+            dataGridView1.Rows[1].Cells[1].Value = words[6];
+            dataGridView1.Rows[1].Cells[2].Value = words[7];
             // dataGridView1.Rows[j].Cells[i + 1].Value = words[i + 1];
             for (int i= 1; i < words.Count()-1; i++)
             {
@@ -57,7 +59,7 @@ namespace DesktopApp
                 }
             }
            
-            label1.Text = responseFromServer;
+            label1.Text = words[0];
             // Cleanup the streams and the response.
             reader.Close();
             dataStream.Close();
