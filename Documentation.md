@@ -205,7 +205,7 @@ Pe parcursul etapei II a proiectului s-au pus bazele atât pentru **TuxyDrive-UI
 
   a) Teona: Demersul proiectului a fost unul progresiv. Toți membrii echipei au fost foarte implicați în rezolvarea task-urilor. De asemenea, au fost dispuși să împărtășească din propriile cunoștințe implicându-se prin review la contribuțiile celorlați membri la proiect.
   
-  b) Roxana: 
+  b) Roxana: Pe parcursul implementării proiectului, Teona a demonstrat că este un bun lider, reușind să își păstreze calmul și să ia deciziile corecte cu privire la dezvoltarea aplicației în momentele critice. Ne-a ajutat și îndrumat cu succes în realizarea task-urilor pe care, încă de la început, le-a împărțit în mod echilibrat între membrii echipei.
   
   c) Mariana: Teona și-a asumat în totalitate rolul de lider. A împărțit task-urile în mod egal, în funcție de cunoștiințele noastre și a sărit în ajutor de fiecare dată când a apărut vreo problemă.
 
