@@ -21,6 +21,7 @@ import javax.ws.rs.core.UriBuilder;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 
+import data.User;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -28,7 +29,6 @@ public class RegisterServlet extends HttpServlet {
 	private static URI getBaseURI() {
 		return UriBuilder.fromUri("http://localhost:1234/TuxyDriveSSW/").build();
     }
-	
 	
 	public RegisterServlet() {
 		super();
@@ -46,9 +46,12 @@ public class RegisterServlet extends HttpServlet {
 		String lname = request.getParameter("lname");
 		String user = request.getParameter("username");
 		String age = request.getParameter("age");
+		int age2 = Integer.parseInt(age);
 		String email = request.getParameter("email");
 		String pswd1 = request.getParameter("pswd1");
 		String pswd2 = request.getParameter("pswd2");
+		
+		System.out.println("fname: " + fname);
 		
 		if ((pswd1.equals(null) && pswd1.equals("")) || pswd2.equals(null) && pswd2.equals("")){
 			
@@ -65,40 +68,36 @@ public class RegisterServlet extends HttpServlet {
 				&& !user.equals(null) && !user.equals("") && !email.equals(null) && !email.equals("")){
 			
 			/* Creare obiect RegisterUser */
+			System.out.println("Crapa inainte de constructor.");
+			User Ruser = new User(lname, fname, email, age2, user, pswd1);
+			System.out.println("Crapa la constructor.");
+			Ruser.setFirstName(fname);
+			Ruser.setLastName(lname);
+			Ruser.setAge(age2);
+			Ruser.setEmail(email);
+			Ruser.setPassword(pswd1);
 			
-//			RegisterUser Ruser = new RegisterUser();
-//			Ruser.setFirstName(fname);
-//			Ruser.setLastName(lname);
-//			Ruser.setAge(age);
-//			Ruser.setEmail(email);
-//			Ruser.setPassword(pswd1);
 
-			
 			ClientConfig config = new ClientConfig();
 	        Client client = ClientBuilder.newClient(config); 
 	        client.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true);
 			WebTarget service = client.target(getBaseURI());
 			Response resp;
 			
-//			resp = service.path("rest").path("register").request(MediaType.APPLICATION_XML).post(Entity.entity(Ruser, MediaType.APPLICATION_XML), Response.class);
-//			System.out.println(resp.getStatus());
-			if(response.getStatus() == 201) {  // accepted -> resursa a fost creata
-				
-//				String subject = "TuxyDrive: Confirmation e-mail";
-//				String body = "Thank you for choose out application. Your account has been successful created!";
-//				TLSEmail.setEmail(email, subject, body);
-				request.getRequestDispatcher("api/login.jsp").forward(request, response);
+			resp = service.path("rest").path("register").request(MediaType.APPLICATION_JSON).post(Entity.entity(Ruser, MediaType.APPLICATION_JSON), Response.class);
+			System.out.println(resp.getStatus());
+			if(resp.getStatus() == 201) {  // accepted -> resursa a fost creata
+				System.out.println("Resursa creata");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-
 			else {
 				HttpSession session = request.getSession();
-				session.setAttribute("error-msg", "This email already exists!");
-				request.getRequestDispatcher("api/register.jsp").forward(request, response);
+				session.setAttribute("msg", "This email already exists!");
+				request.getRequestDispatcher("register.jsp").forward(request, response);
 			}
 		}else{
-			request.setAttribute("register-msg", "Fields are mandatory!");
-			request.getRequestDispatcher("api/register.jsp").forward(request, response);
+			request.setAttribute("msg", "Fields are mandatory!");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
 	}
-
 }
