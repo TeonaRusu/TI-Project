@@ -160,3 +160,63 @@ Pe parcursul etapei II a proiectului s-au pus bazele atât pentru **TuxyDrive-UI
           - implementarea operațiilor de adăugare, ștergere, căutare, modificare entități din baza de date TuxyDrive.
 
  - _Opțional_: Aplicație Mobile
+
+## Analiza dezvoltării aplicației în etapa III
+
+1. Probleme speciale sau dificultăți întâmpinate:
+- încărcarea fișierelor în interfață
+- realizarea legăturii între servlet și serverul web
+- crearea funcțiilor de vizualizare și ștergere a fișierelor în JavaScript
+
+2. Design pattern:
+- MVC (Model-View-Controller)
+
+3. Contribuțiile membrilor echipei:
+
+  a) Rusu Teona-Ștefana:
+    - crearea structurii proiectului în Eclipse
+    - identificarea actorilor și a componentelor aplicației
+    - descrierea implementării
+    - diagrama UML de componente
+    - diagrama UML de Secvență
+    - implementarea serverului de servicii web pentru logare
+    - implementarea serverului de servicii web pentru managementul fișierelor
+    - crearea paginii de wiki
+    
+  b) Pomîrleanu Ioana-Roxana:
+    - adăugare resurse hardware și software în documentație
+    - diagrama UML de Information Flow
+    - diagrama UML de Stare
+    - implementare servlet pentru logare
+    - implementare jsp pentru logare
+    - implementare servlet pentru înregistrare utilizator nou
+    - implementare jsp pentru înregistrare utilizator nou
+
+  c) Tucaliuc Mariana:
+    - diagrama UML de Use-Case
+    - diagrama UNL de Activitate
+    - diagrama ER
+    - implementare conexiunii bazei de date cu serverul
+    - creare tabelă pentru autentificare
+    - creare tabelă pentru utizilator
+    - creare tabelă pentru fișiere
+
+4. Aprecierea critică a membrilor echipei:
+
+  a) Teona: Demersul proiectului a fost unul progresiv. Toți membrii echipei au fost foarte implicați în rezolvarea task-urilor. De asemenea, au fost dispuși să împărtășească din propriile cunoștințe implicându-se prin review la contribuțiile celorlați membri la proiect.
+  
+  b) Roxana: 
+  
+  c) Mariana: 
+
+5. Concluzii:
+  - aplicația permite utilizatorului să stocheze fișiere în cloud
+  - este disponibilă și versiunea Desktop
+
+6. Modalități de extindere:
+  - posibilitatea de a modifica documente online
+  - aplicație mobile
+
+7. Bibliografie:
+  - https://studenti.h23.ro
+  - https://stackoverflow.com
