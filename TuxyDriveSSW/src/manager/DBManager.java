@@ -10,11 +10,12 @@ import java.util.ArrayList;
 
 
 import data.UserLogin;
-import data.Files;
+import data.File;
+
 import data.User;
 
 public class DBManager {
-	private static final String URL = "jdbc:mysql://localhost:3306/tuxydrive_db";
+	private static final String URL = "jdbc:mysql://localhost:3306/tuxydrive";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
 	private static final DBManager instance = new DBManager();
@@ -45,13 +46,49 @@ public class DBManager {
 		}
 		
 	}
+public ArrayList<UserLogin> getUserList() {
+		
+		ArrayList<UserLogin> userList = new ArrayList<UserLogin>();
+		try {
+			st.execute("select * from user_login");
+			System.out.println("saaaluuuut");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			rs = st.getResultSet();
+			System.out.println("saaaluuuut2");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			while (rs.next()) {
+				int id = rs.getInt("UserID");
+				String  username = rs.getString("Username");
+				String  pass = rs.getString("Password");
+				System.out.println(id + " " + username + " " + pass);
+				UserLogin user = new UserLogin(id,username,pass);
+				
+		//		System.out.println(user.getId() + " " + user.getPswd() + " " + user.getUsername());
+				userList.add(user);
+				
+			}
+			System.out.println("saaaluuuut3");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		// st.close();
+		return userList;
 	
-	public ArrayList<UserLogin> getUserList() {
+}
+	public ArrayList<File> getFileList() {
 	
-			ArrayList<UserLogin> userList = new ArrayList<UserLogin>();
+			ArrayList<File> fileList = new ArrayList<File>();
 			try {
-				st.execute("select * from user_login");
-				System.out.println("saaaluuuut");
+				st.execute("select * from files");
+				System.out.println("select * from files");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -65,14 +102,16 @@ public class DBManager {
 			
 			try {
 				while (rs.next()) {
-					int id = rs.getInt("id");
-					String  username = rs.getString("username");
-					String  pass = rs.getString("password");
-					System.out.println(id + " " + username + " " + pass);
-					UserLogin user = new UserLogin(id,username,pass);
+					int fileID = rs.getInt("FileID");
+					int userID = rs.getInt("UserID");
+					String  name = rs.getString("Name");
+					String  type = rs.getString("Type");
+					int size = rs.getInt("Size");
+					System.out.println(fileID + " " + userID + " " + name + " " + type + " " + size);
+					File file = new File(fileID,userID, name, type, size);
 					
 			//		System.out.println(user.getId() + " " + user.getPswd() + " " + user.getUsername());
-					userList.add(user);
+					fileList.add(file);
 					
 				}
 				System.out.println("saaaluuuut3");
@@ -80,16 +119,31 @@ public class DBManager {
 				e.printStackTrace();
 			}
 			// st.close();
-			return userList;
+			return fileList;
 		
 	}
-	public boolean isUserInDatabase(String email) {
+	public boolean isUserInUsersTable(String email) {
 		try{
 			String query = "select * from users";
 			rs = st.executeQuery(query);
 			while(rs.next()) {
 				String dbEmail = rs.getString("email");
 				if(email.equals(dbEmail)) {
+					return true;
+				}
+			}
+		}catch (Exception ex){
+			System.out.println(ex);
+		}
+		return false;
+	}
+	public boolean isUserInUser_LoginTable(String username) {
+		try{
+			String query = "select * from user_login";
+			rs = st.executeQuery(query);
+			while(rs.next()) {
+				String dbUsername = rs.getString("Username");
+				if(username.equals(dbUsername)) {
 					return true;
 				}
 			}
@@ -115,7 +169,7 @@ public class DBManager {
 	}
 	public boolean insertUser(User user) {
 		try{
-			if(isUserInDatabase(user.getEmail())) {
+			if(isUserInUsersTable(user.getEmail())) {
 				return false;
 			}
 			String sql = "INSERT INTO users(UserID, LastName, FirstName, Age, Email) VALUES(?,?,?,?,?)";
@@ -132,9 +186,24 @@ public class DBManager {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		try{
+			if(isUserInUser_LoginTable(user.getUsername())) {
+				return false;
+			}
+			String sql = "INSERT INTO user_login(UserID, Username, Password) VALUES(?,?,?)";
+			PreparedStatement p = conn.prepareStatement(sql);
+			p.setString(1, user.getUsername());
+			p.setString(2, user.getPassword());
+			p.setInt(3, (user.getUserID()));
+			p.executeUpdate();
+			return true;
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return false;
 	}
-	public boolean insertFile(Files file) {
+	public boolean insertFile(File file) {
 		try{
 			if(isFileInDatabase(file.getName())) {
 				return false;
@@ -182,18 +251,68 @@ public class DBManager {
 		System.out.println("getUserLogin Fct");
 		System.out.println(username);
 		try {
-			rs = st.executeQuery("select * from user_login where username = '" + username + "'");
+			rs = st.executeQuery("select * from user_login where Username = '" + username + "'");
 			System.out.println("rs");
 			while(rs.next())
 			{
 				System.out.println("while");
-				UserLogin user = new UserLogin(rs.getInt("id"),rs.getString("username"),rs.getString("password") );
+				UserLogin user = new UserLogin(rs.getInt("UserID"),rs.getString("Username"),rs.getString("Password") );
+			
+//				user.setId(rs.getInt("id"));
+//				user.setUsername(rs.getString("username"));
+//				user.setPassword(rs.getString("pswd"));
+				System.out.println("user login DB " + user);
+				return user;
+			}
+			return null;
+		}catch(Exception ex)
+		{
+			System.out.println(ex);
+			return null;
+		}
+	}
+	public User getUser(String email)
+	{
+		System.out.println("getUserFct");
+		System.out.println(email);
+		try {
+			rs = st.executeQuery("select * from users where Email = '" + email + "'");
+			System.out.println("rs");
+			while(rs.next())
+			{
+				System.out.println("while");
+				User user = new User(rs.getInt("UserID"),rs.getString("LastName"),rs.getString("FirstName"),rs.getString("Email"),rs.getInt("Size") );
 			
 //				user.setId(rs.getInt("id"));
 //				user.setUsername(rs.getString("username"));
 //				user.setPassword(rs.getString("pswd"));
 				System.out.println("user DB " + user);
 				return user;
+			}
+			return null;
+		}catch(Exception ex)
+		{
+			System.out.println(ex);
+			return null;
+		}
+	}
+	public File getFile(String name)
+	{
+		System.out.println("getFile Fct");
+		System.out.println(name);
+		try {
+			rs = st.executeQuery("select * from files where Name = '" + name + "'");
+			System.out.println("rs");
+			while(rs.next())
+			{
+				System.out.println("while");
+				File file = new File(rs.getInt("FileID"),rs.getInt("LastName"),rs.getString("Name"),rs.getString("Type"),rs.getInt("Size") );
+			
+//				user.setId(rs.getInt("id"));
+//				user.setUsername(rs.getString("username"));
+//				user.setPassword(rs.getString("pswd"));
+				System.out.println("file DB " + file);
+				return file;
 			}
 			return null;
 		}catch(Exception ex)

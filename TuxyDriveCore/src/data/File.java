@@ -1,13 +1,13 @@
 package data;
 
-public class Files {
+public class File {
 	private int fileID;
 	private int userID;
 	private String name;
 	private String type;
 	private int size;
 
-	public Files(){
+	public File(){
 		this.userID = 0;
 		this.fileID = 0;
 		this.name = null;
@@ -16,7 +16,7 @@ public class Files {
 		
 	}
 
-	public Files(int userID, int fileID, String name, String type, int size) {
+	public File(int fileID, int userID, String name, String type, int size) {
 		this.userID = userID;
 		this.fileID = fileID;
 		this.name = name;
@@ -58,5 +58,13 @@ public class Files {
 	}
 	public void setSize(int size) {
 		this.size = size;
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("File [FileID=").append(fileID)
+			.append(", UserID=").append(userID).append(", Name=")
+			.append(name).append(", Type=").append(type).append(", Size=").append(size).append("]");
+		return builder.toString();
 	}
 }
