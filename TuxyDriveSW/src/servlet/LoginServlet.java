@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 				WebTarget service = client.target(getBaseURI());
 				Response resp;
 				
-				UserLogin user2 = new UserLogin();
+				UserLogin user2 = new UserLogin(0, user, pswd);
 				user2.setUsername(user);
 				user2.setPassword(pswd);
 				

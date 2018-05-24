@@ -35,7 +35,7 @@
 	
 	<!-- Register form -->
 	<div class="form-container register-form">	
-		<form method="POST" enctype="multipart/form-data" action="RegisterServlet">
+		<form method="POST" action="RegisterServlet">
 			<div style="width: 50%; float:left; background-color:#fefefe; height: 300px;">
 				<div class="form-row">
 					<label>First name</label>

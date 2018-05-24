@@ -172,16 +172,17 @@ public ArrayList<UserLogin> getUserList() {
 			if(isUserInUsersTable(user.getEmail())) {
 				return false;
 			}
+			System.out.println("Am inserat in DB0.");
 			String sql = "INSERT INTO users(UserID, LastName, FirstName, Age, Email) VALUES(?,?,?,?,?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getEmail());
+			pstmt.setInt(1, user.getUserID());
 			pstmt.setString(2, user.getLastName());
 			pstmt.setString(3, user.getFirstName());
-			pstmt.setString(4, user.getEmail());
-			pstmt.setInt(5, (user.getAge()));
-//			pstmt.setString(6, user.getAddress2());
+			pstmt.setInt(4, (user.getAge()));
+			pstmt.setString(5, user.getEmail());
+			
 			pstmt.executeUpdate();
-			return true;
+			System.out.println("Am inserat in DB1.");
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -190,14 +191,25 @@ public ArrayList<UserLogin> getUserList() {
 			if(isUserInUser_LoginTable(user.getUsername())) {
 				return false;
 			}
-			String sql = "INSERT INTO user_login(UserID, Username, Password) VALUES(?,?,?)";
-			PreparedStatement p = conn.prepareStatement(sql);
-			p.setString(1, user.getUsername());
-			p.setString(2, user.getPassword());
-			p.setInt(3, (user.getUserID()));
-			p.executeUpdate();
-			return true;
-
+			
+			ResultSet rs;
+			String id = "SELECT LAST_INSERT_ID() last_user" ;
+			//Statement st = conn.createStatement();
+			rs = st.executeQuery(id);
+			while(rs.next()) {
+				int userId = Integer.parseInt(rs.getString("last_user"));
+				
+				String sql2 = "INSERT INTO user_login(UserID, Username, Password) VALUES(?,?,?)";
+				PreparedStatement p = conn.prepareStatement(sql2);
+				
+				p.setInt(1, userId);
+				p.setString(2, user.getUsername());
+				p.setString(3, user.getPassword());
+			
+				p.executeUpdate();
+				System.out.println("Am inserat in DB2.");
+				return true;
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
