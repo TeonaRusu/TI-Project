@@ -90,8 +90,8 @@ body {
 }
 
 .createBtn{
-	float:right;
-	margin-right:15px;
+    float:right;
+    margin-right:15px;
 }
 
 .error {
@@ -121,26 +121,26 @@ body {
 
 
 h1{
-	text-align:center;
+    text-align:center;
 }
 
 /*footer*/
 footer {
-	margin: 30px 0;
+    margin: 30px 0;
     font-weight: bold;
     text-align: center;
     font-size: 1.3em;
 }
 .header-img {
-	display:block;
-	margin:auto;
+    display:block;
+    margin:auto;
     width: 70px;
 }
 
 .form-container {
-	margin: 60px auto;
+    margin: 60px auto;
     border: 1px solid #ccc;
-	width: 400px;
+    width: 400px;
     background: #fff;
     padding: 25px;
     overflow: hidden;
@@ -164,11 +164,11 @@ footer {
     box-sizing: border-box;
 }
 
-.register-form{	
-	margin: 60px auto;
+.register-form{ 
+    margin: 60px auto;
     border: 1px solid #ccc;
-	width: 800px;
-	hight: 400px;
+    width: 800px;
+    hight: 400px;
     background: #fff;
     padding: 25px;
     overflow: hidden;
@@ -200,6 +200,50 @@ footer {
     float:left;
     width: 100%;
     margin: 30px 0 0 0;
+}
+
+.form-row-file input[type=text]{
+    width: 100%;
+    padding: 10px 25px;
+    line-height: 180%;
+    box-sizing: border-box;
+}
+
+.form-row-file label {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-weight: bold;
+}
+.form-row-file {
+    margin: 0 0 15px 0;
+}
+.uploadBtn{
+    float:right;
+}
+
+.header-sec{
+    border-radius: 5px;
+    color: #22af4a;
+    text-align: center;
+    font-size:2em;
+    vertical-align: baseline;
+    font: inherit;
+    display: block;
+    margin-top: 0;
+    padding: 1px;
+    border: 0;
+    outline: 0;
+    font-size: 90%;
+}
+
+.date-form{
+    margin-top: 5px;
+    padding:1%; 
+    width: 50%;
+    float:none;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 
