@@ -83,45 +83,45 @@ public ArrayList<UserLogin> getUserList() {
 		return userList;
 	
 }
-	public ArrayList<File> getFileList() {
+public ArrayList<File> getFileList(int id) {
 	
-			ArrayList<File> fileList = new ArrayList<File>();
-			try {
-				st.execute("select * from files");
-				System.out.println("select * from files");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			try {
-				rs = st.getResultSet();
-				System.out.println("saaaluuuut2");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			try {
-				while (rs.next()) {
-					int fileID = rs.getInt("FileID");
-					int userID = rs.getInt("UserID");
-					String  name = rs.getString("Name");
-					String  type = rs.getString("Type");
-					int size = rs.getInt("Size");
-					System.out.println(fileID + " " + userID + " " + name + " " + type + " " + size);
-					File file = new File(fileID,userID, name, type, size);
-					
-			//		System.out.println(user.getId() + " " + user.getPswd() + " " + user.getUsername());
-					fileList.add(file);
-					
-				}
-				System.out.println("saaaluuuut3");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			// st.close();
-			return fileList;
-		
+	ArrayList<File> fileList = new ArrayList<File>();
+	try {
+		st.execute("select * from files where UserID = '" + id +"'");
+		System.out.println("select * from files");
+	} catch (SQLException e) {
+		e.printStackTrace();
 	}
+	
+	try {
+		rs = st.getResultSet();
+		System.out.println("saaaluuuut2");
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+	try {
+		while (rs.next()) {
+			int fileID = rs.getInt("FileID");
+			int userID = rs.getInt("UserID");
+			String  name = rs.getString("Name");
+			String  type = rs.getString("Type");
+			int size = rs.getInt("Size");
+			System.out.println(fileID + " " + userID + " " + name + " " + type + " " + size);
+			File file = new File(fileID,userID, name, type, size);
+			
+	//		System.out.println(user.getId() + " " + user.getPswd() + " " + user.getUsername());
+			fileList.add(file);
+			
+		}
+		System.out.println("saaaluuuut3");
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	// st.close();
+	return fileList;
+
+}
 	public boolean isUserInUsersTable(String email) {
 		try{
 			String query = "select * from users";

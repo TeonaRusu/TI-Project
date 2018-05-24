@@ -1,9 +1,13 @@
 package servicii.web;
 
+import java.util.ArrayList;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import data.File;
 import manager.DBManager;
 
 // adnotarea Path specifica calea relativa spre un anumit serviciu web
@@ -16,15 +20,32 @@ public class Hello {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayPlainTextHello() {
-		return "Hello Jersey";
+		ArrayList <File> arrayFiles = DBManager.getInstance().getFileList(1);
+		String result = "";
+		for (int i = 0; i < arrayFiles.size(); i++) {
+			result += arrayFiles.get(i).getName() + "#";
+			result += arrayFiles.get(i).getType() + "#";
+			result += arrayFiles.get(i).getSize() + "#";
+			result += "aici#";
+			System.out.println(result);
+		}
+		return "Hello, TuxyDrive User!#" + result ;
 	}
 
 	// Metoda apelata daca tipul media cerut este XML
 	@GET
 	@Produces(MediaType.TEXT_XML)
 	public String sayXMLHello() {
-		
-		return "<?xml version=\"1.0\"?>" + "<hello> Hello Jersey" + DBManager.getInstance().getUserList().toString() + "</hello>";
+		ArrayList <File> arrayFiles = DBManager.getInstance().getFileList(1);
+		String result = "";
+		for (int i = 0; i < arrayFiles.size(); i++) {
+			result += arrayFiles.get(i).getName() + "#";
+			result += arrayFiles.get(i).getType() + "#";
+			result += arrayFiles.get(i).getSize() + "#";
+			result += "aici#";
+			System.out.println(result);
+		}
+		return "Hello, TuxyDrive User!#" + result ;
 		
 	}
 
@@ -32,7 +53,16 @@ public class Hello {
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String sayHtmlHello() {
-		return "<html> " + "<title>" + "Hello Jersey" + "</title>" + "<body><h1>" + "Hello Jersey" + "</h1>" + DBManager.getInstance().getUserList().toString() + "</body>" + "</html> ";
+		ArrayList <File> arrayFiles = DBManager.getInstance().getFileList(1);
+		String result = "";
+		for (int i = 0; i < arrayFiles.size(); i++) {
+			result += arrayFiles.get(i).getName() + "#";
+			result += arrayFiles.get(i).getType() + "#";
+			result += arrayFiles.get(i).getSize() + "#";
+			result += "aici#";
+			System.out.println(result);
+		}
+		return "Hello, TuxyDrive User!#" + result ;
 	}
 
 }
