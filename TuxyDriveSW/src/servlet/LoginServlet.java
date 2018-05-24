@@ -40,6 +40,8 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import data.UserLogin;
 import data.UserParser;
 
+import org.json.*;
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	
@@ -61,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 		
 		String user = request.getParameter("username");
 		String pswd = request.getParameter("pswd");
-		
+		String password = "";
 		System.out.println("user-->" + user);
 		
 		if (!user.equals(null) && !user.equals("")) {
@@ -73,6 +75,10 @@ public class LoginServlet extends HttpServlet {
 				WebTarget service = client.target(getBaseURI());
 				Response resp;
 				
+				UserLogin user2 = new UserLogin();
+				user2.setUsername(user);
+				user2.setPassword(pswd);
+								
 				resp = service.path("rest").path("login").path(user).request().accept(MediaType.APPLICATION_JSON).get(Response.class);
 				String data = resp.readEntity(String.class);
 				int status = resp.getStatus();
@@ -80,20 +86,26 @@ public class LoginServlet extends HttpServlet {
 
 				if (status==200){
 					// JSON Parser
-					/*
-					ObjectMapper mapper = new ObjectMapper();
-					SimpleModule module = new SimpleModule("UserParser");
-					module.addDeserializer(UserLogin.class, new UserParser());
-					mapper.registerModule(module);
-					UserLogin userLogin = new UserLogin();
-					userLogin = mapper.readValue(data, UserLogin.class);
-					System.out.println(userLogin.getUsername());*/
 					
-					System.out.println("Correct password!");
-					response.sendRedirect("home.jsp");
+					try {
+						JSONObject obj = new JSONObject(data);
+						password =  obj.getString("pswd");
+						System.out.println("Parola este:" + password);
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					if (password.equals(pswd)) {
+						System.out.println("Correct password!");
+						response.sendRedirect("home.jsp");
+					}
+					else
+					{
+						System.out.println("Incorrect password!");
+						request.getRequestDispatcher("api/login.jsp").forward(request, response);
+					}
 				}else{
-					System.out.println("Incorrect password!");
-					
+						
 					HttpSession session = request.getSession();
 					session.setAttribute("error-msg", "Incorrect user or password!");
 					request.getRequestDispatcher("api/login.jsp").forward(request, response);

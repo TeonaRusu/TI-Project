@@ -47,5 +47,6 @@
 	<classpathentry kind="lib" path="lib/jackson-core-2.9.5.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.9.5.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-annotations-2.9.5.jar"/>
+	<classpathentry kind="lib" path="lib/org.json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
