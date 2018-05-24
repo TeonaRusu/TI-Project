@@ -1,0 +1,9 @@
+D:\TI-P\DesktopApp\DesktopApp\bin\Debug\DesktopApp.exe.config
+D:\TI-P\DesktopApp\DesktopApp\bin\Debug\DesktopApp.exe
+D:\TI-P\DesktopApp\DesktopApp\bin\Debug\DesktopApp.pdb
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csprojResolveAssemblyReference.cache
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.Form1.resources
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.Properties.Resources.resources
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.csproj.GenerateResource.Cache
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.exe
+D:\TI-P\DesktopApp\DesktopApp\obj\Debug\DesktopApp.pdb
