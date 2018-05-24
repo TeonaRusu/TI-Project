@@ -3,5 +3,6 @@
 %>
 <%
 	/* invalidare sesiune */
-	response.sendRedirect("../index.jsp");
+	session.invalidate();
+	response.sendRedirect("index.jsp");
 %>

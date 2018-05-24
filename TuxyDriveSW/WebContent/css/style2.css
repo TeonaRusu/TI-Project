@@ -178,3 +178,28 @@ footer {
     padding:50px;
 }
 
+.error-msg{
+    color: #a94442;
+    padding: 5px 10px;
+    border: 1px solid #a94442;
+    background: #f2dede;
+}
+
+.success-msg {
+    color: #3c763d;
+    padding: 5px 10px;
+    border: 1px solid #3c763d;
+    background: #dff0d8;
+}
+.error {
+    float:left;
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+.succes {
+    float:left;
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+
+
