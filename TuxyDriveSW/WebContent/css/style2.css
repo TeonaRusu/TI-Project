@@ -45,7 +45,7 @@ table {
 
 body {
     background: #fdfdfd;
-    color: #ccc;
+    color: black;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
 }
@@ -54,6 +54,7 @@ body {
     font-weight: bold;
     text-transform: capitalize;
     text-shadow: 1px 1px #222;
+    color: #ccc;
 }
 .button {
     display:inline-block;
@@ -258,3 +259,17 @@ footer {
         width: 100%;
     }
 }
+
+table, th, td 
+{
+margin:10px 0;
+border:solid 1px #333;
+padding:2px 4px;
+font:15px Verdana;
+color:back;
+}
+th {
+     font-weight:bold;
+     color:red;
+}
+        }

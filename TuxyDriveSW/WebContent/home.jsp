@@ -51,11 +51,10 @@
   	<!-- Main container -->
 	<div class="container">
 		<h2 style="font-size:2em; color:red"id="welcome">Welcome!</h2>
-		<form method="POST" action="../index.php">
-			<button class="viewBtn button">View Files!</button>
+		<form method="POST">
+			<button class="viewBtn button" onclick="loadFiles('FilesServlet');return false;">View Files!</button>
 		</form>
-		</div id="table-place">
-		</div>
+		<div id="showData"></div>
 	</div>
 	<!-- End main container -->
 </body>

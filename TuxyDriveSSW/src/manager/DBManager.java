@@ -88,14 +88,14 @@ public ArrayList<File> getFileList(int id) {
 	ArrayList<File> fileList = new ArrayList<File>();
 	try {
 		st.execute("select * from files where UserID = '" + id +"'");
-		System.out.println("select * from files");
+		System.out.println("select * from files---" + id);
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
 	
 	try {
 		rs = st.getResultSet();
-		System.out.println("saaaluuuut2");
+		System.out.println("Esti pe drumul cel bun");
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
@@ -114,11 +114,12 @@ public ArrayList<File> getFileList(int id) {
 			fileList.add(file);
 			
 		}
-		System.out.println("saaaluuuut3");
+		System.out.println("Ai terminat");
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
 	// st.close();
+	System.out.println("Ciudat" + fileList);
 	return fileList;
 
 }
