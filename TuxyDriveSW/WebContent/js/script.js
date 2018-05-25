@@ -12,33 +12,6 @@ function addCell(row, data) {
 
 
 function createTabel(myBooks){
-//	var body = document.getElementsByClassName("showTable")[0];
-//	var table = document.createElement("table");
-//	var tableBody = document.createElement("tbody");
-//	tableBody.innerHTML += "<tr>" + "<th>FILE ID</th>" + 
-//									"<th>USER ID</th>"+
-//									"<th>NAME</th>" + 
-//									"<th>TYPE</th>" + 
-//									"<th>SIZE</th>" + "</tr>";
-//
-//	for(var i = 0; i < json.length; ++i)
-//	{
-//		var file_id = json.FileID;
-//		var user_id = json.UserID;
-//		var name = json.Name;
-//		var type = json.Type;
-//		var size = json.Size;
-//
-//		addCell("<tr>", file_id);
-//		addCell("<tr>", user_id);
-//		addCell("<tr>", name);
-//		addCell("<tr>", type);
-//		addCell("<tr>", syze);
-//	}
-//
-//
-//	table.appendChild(tableBody);
-//	body.appendChild(table);
 	var col = [];
     for (var i = 0; i < myBooks.length; i++) {
         for (var key in myBooks[i]) {
